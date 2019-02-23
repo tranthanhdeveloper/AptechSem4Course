@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <definition name="mytemplate" template="/template/mytemplate.jsp">
+        <put-attribute name="content" value=""/>
+    </definition>
+
+    <definition name="home.index" extends="mytemplate">
+        <put-attribute name="content" value="/home/index.jsp"/>
+    </definition>
+
+    <definition name="aboutus.index" extends="mytemplate">
+        <put-attribute name="content" value="/aboutus/index.jsp"/>
+    </definition>
+
+    <definition name="news.index" extends="mytemplate">
+        <put-attribute name="content" value="/news/index.jsp"/>
+    </definition>
+
+    <definition name="employee.index" extends="mytemplate">
+        <put-attribute name="content" value="/employee/index.jsp"/>
+    </definition>
+
+    <definition name="employee.success" extends="mytemplate">
+        <put-attribute name="content" value="/employee/index.jsp"/>
+    </definition>
+
+    <!--Tiles configuration for Student-->
+    <definition name="student.index" extends="mytemplate">
+        <put-attribute name="content" value="/student/index.jsp"/>
+    </definition>
+
+    <definition name="student.add" extends="mytemplate">
+        <put-attribute name="content" value="/student/add.jsp"/>
+    </definition>
+</tiles-definitions>
