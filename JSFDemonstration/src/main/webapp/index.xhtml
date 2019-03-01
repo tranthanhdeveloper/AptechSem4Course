@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+    <h:outputStylesheet library="js" name="main.js"></h:outputStylesheet>
+    <h:graphicImage library="images"></h:graphicImage>
+</h:head>
+
+<body>
+    <hr></hr>
+    Username: #{demoManagedBean.username}
+    <hr></hr>
+    age: #{demoManagedBean.age}
+    <hr></hr>
+    <h1>Product</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>#{demoManagedBean.product.id}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>#{demoManagedBean.product.name}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>#{demoManagedBean.product.price}</td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>#{demoManagedBean.product.quantity}</td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><h:graphicImage library="images" name="thumb1.gif"></h:graphicImage></td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
