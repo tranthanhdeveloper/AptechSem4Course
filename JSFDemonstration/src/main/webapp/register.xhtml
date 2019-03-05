@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+    <h:form>
+        <table>
+            <tr>
+                <td>Username</td>
+                <td>
+                    <h:inputText value="#{accountManagedBean.account.username}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <h:inputSecret value="#{accountManagedBean.account.password}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Description</td>
+                <td>
+                    <h:inputTextarea value="#{accountManagedBean.account.description}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Status</td>
+                <td>
+                    <h:selectBooleanCheckbox value="#{accountManagedBean.account.status}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <h:selectOneRadio value="#{accountManagedBean.account.gender}">
+                        <f:selectItem itemLabel="Male" itemValue="male"/>
+                        <f:selectItem itemLabel="Female" itemValue="female"/>
+                    </h:selectOneRadio>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Languages</td>
+                <td>
+                    <h:selectManyCheckbox value="#{accountManagedBean.account.languages}" layout="pageDirection">
+                        <f:selectItems value="#{accountManagedBean.languageList}" var="lang" itemLabel="#{lang.name}" itemValue="#{lang.code}"/>
+                    </h:selectManyCheckbox>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Languages</td>
+                <td>
+                    <h:selectOneMenu value="#{accountManagedBean.account.role}" >
+                        <f:selectItems value="#{accountManagedBean.roleList}" var="role" itemLabel="#{role.name}" itemValue="#{role.id}"/>
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <h:commandButton action="#{accountManagedBean.save()}" value="Save"/>
+                </td>
+            </tr>
+        </table>
+
+    </h:form>
+</body>
+</html>

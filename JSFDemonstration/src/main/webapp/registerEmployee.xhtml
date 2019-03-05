@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+<h:form prependId="false">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <h:inputText id="username" value="#{employeeManagedBean.employee.username}" required="true">
+                    <f:validateLength minimum="3" maximum="10" />
+                    <f:validator validatorId="userValidator"></f:validator>
+                </h:inputText>
+            </td>
+            <td>
+                <h:message for="username"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Username</td>
+            <td>
+                <h:inputText id="age" value="#{employeeManagedBean.employee.age}" required="true">
+                    <f:validateLongRange minimum="18" maximum="120" />
+                    <f:validator validatorId="userValidator"></f:validator>
+                </h:inputText>
+            </td>
+            <td>
+                <h:message for="age"/>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <h:commandButton action="#{employeeManagedBean.save()}" value="Save"/>
+            </td>
+        </tr>
+
+    </table>
+</h:form>
+</body>
+</html>
