@@ -7,13 +7,21 @@ import javax.persistence.Id;
 
 @Entity
 public class Student {
-    private int id;
-    private String username;
-    private String password;
-    private String fullName;
-
     @Id
     @Column(name = "Id", nullable = false)
+    private int id;
+
+    @Basic
+    @Column(name = "username", nullable = true, length = 250)
+    private String username;
+    @Basic
+    @Column(name = "password", nullable = true, length = 250)
+    private String password;
+    @Basic
+    @Column(name = "fullName", nullable = true, length = 250)
+    private String fullName;
+
+
     public int getId() {
         return id;
     }
@@ -22,8 +30,7 @@ public class Student {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "username", nullable = true, length = 250)
+
     public String getUsername() {
         return username;
     }
@@ -32,8 +39,7 @@ public class Student {
         this.username = username;
     }
 
-    @Basic
-    @Column(name = "password", nullable = true, length = 250)
+
     public String getPassword() {
         return password;
     }
@@ -42,8 +48,7 @@ public class Student {
         this.password = password;
     }
 
-    @Basic
-    @Column(name = "fullName", nullable = true, length = 250)
+
     public String getFullName() {
         return fullName;
     }

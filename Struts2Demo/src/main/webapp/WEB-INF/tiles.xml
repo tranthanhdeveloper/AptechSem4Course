@@ -37,4 +37,12 @@
     <definition name="student.add" extends="mytemplate">
         <put-attribute name="content" value="/student/add.jsp"/>
     </definition>
+
+    <definition name="student.update" extends="mytemplate">
+        <put-attribute name="content" value="/student/update.jsp"/>
+    </definition>
+
+    <definition name="student.login" extends="mytemplate">
+        <put-attribute name="content" value="/student/login.jsp"/>
+    </definition>
 </tiles-definitions>

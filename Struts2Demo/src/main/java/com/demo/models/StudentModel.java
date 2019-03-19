@@ -30,6 +30,39 @@ public class StudentModel {
         return studentList;
     }
 
+    public Student findById(int id){
+        Student student = null;
+        Session session = null;
+        Transaction transaction = null;
+
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+            student = (Student) session.createQuery("select student from Student student where student.id=:id").setParameter("id", id).getSingleResult();
+            transaction.commit();
+        }catch (Exception e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+        }finally {
+            session.close();
+        }
+        return student;
+    }
+
+    public Student findByUsername(String username){
+        Student student = null;
+        Session session = null;
+
+        try {
+            session = sessionFactory.openSession();
+            student = (Student) session.createQuery("select student from Student student where student.username=:username").setParameter("username", username).getSingleResult();
+        }finally {
+            session.close();
+        }
+        return student;
+    }
+
     public boolean save(Student student){
         boolean insertResult = false;
         Session session = null;

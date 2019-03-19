@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<danhsachhoadon>
+    <hoadon>
+        <mahd>h01</mahd>
+        <tenhd>Hoa don 1</tenhd>
+        <ngaytao>2013-01-02</ngaytao>
+        <chitiethoadon>
+            <sanpham>
+                <masp>sp01</masp>
+                <tensp>San Pham 1</tensp>
+                <gia>5000</gia>
+                <soluong>2</soluong>
+            </sanpham>
+            <sanpham>
+                <masp>sp02</masp>
+                <tensp>San Pham 2</tensp>
+                <gia>6000</gia>
+                <soluong>3</soluong>
+            </sanpham>
+        </chitiethoadon>
+    </hoadon>
+
+    <hoadon>
+        <mahd>h02</mahd>
+        <tenhd>Hoa don 2</tenhd>
+        <ngaytao>2013-05-12</ngaytao>
+        <chitiethoadon>
+            <sanpham>
+                <masp>sp03</masp>
+                <tensp>San Pham 3</tensp>
+                <gia>5100</gia>
+                <soluong>3</soluong>
+            </sanpham>
+            <sanpham>
+                <masp>sp04</masp>
+                <tensp>San Pham 4</tensp>
+                <gia>8000</gia>
+                <soluong>13</soluong>
+            </sanpham>
+        </chitiethoadon>
+    </hoadon>
+
+</danhsachhoadon>
