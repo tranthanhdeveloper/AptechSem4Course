@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <address>
+        <district>District 3</district>
+        <street>Street</street>
+        <ward>Ward</ward>
+    </address>
+    <age>10</age>
+    <dob format="yyyy-MM-dd" place="Test">1980-10-20</dob>
+    <id>st01</id>
+    <name>Student Name 1</name>
+</student>

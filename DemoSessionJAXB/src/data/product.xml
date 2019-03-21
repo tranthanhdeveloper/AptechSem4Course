@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <category>
+        <id>1</id>
+        <name>Category 1</name>
+    </category>
+    <date format="dd/MM/yyy">20/10/2019</date>
+    <id>
+        <max>10</max>
+        <min>3</min>
+        <value>p01</value>
+    </id>
+    <name>Name 1</name>
+    <price currency="USD">4.5</price>
+    <status>true</status>
+    <weight unit="kg">2</weight>
+</product>
