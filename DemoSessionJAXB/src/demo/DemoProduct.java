@@ -18,9 +18,9 @@ public class DemoProduct {
 		product.setWeight(new Product.Weight("kg", 2));
 		product.setCatefory(new Product.Category(1, "Category 1"));
 		product.setDate(new Product.Date("dd/MM/yyy", "20/10/2019"));
-		product.setStatus(true);
-
-		serialize(product);
+//		product.sta
+		
+		
 	}
 	
 	private static void serialize(Product product) {

@@ -8,32 +8,41 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlRootElement(name = "product")
 public class Product {
 	
+	@XmlElement(name="id")
 	private Id id;
+	
+	@XmlElement(name="name")
 	private String name;
+	
+	@XmlElement(name="price")
 	private Price price;
+	
+	@XmlElement(name="weight")
 	private Weight weight;
-	private Category category;
+	
+	@XmlElement(name="cateforys")
+	private Category catefory;
+	
+	@XmlElement(name="date")
 	private Date date;
-	private boolean status;
 	
 	public Product() {
 	}
-
-	public Product(Id id, String name, Price price, Weight weight, Category catefory, Date date, boolean status) {
+	
+	public Product(Id id, String name, Price price, Weight weight, Category catefory, Date date) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.weight = weight;
-		this.category = catefory;
+		this.catefory = catefory;
 		this.date = date;
-		this.status = status;
 	}
 
 	public Id getId() {
 		return id;
 	}
 
-	@XmlElement(name="id")
 	public void setId(Id id) {
 		this.id = id;
 	}
@@ -42,7 +51,6 @@ public class Product {
 		return name;
 	}
 
-	@XmlElement(name="name")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -50,8 +58,7 @@ public class Product {
 	public Price getPrice() {
 		return price;
 	}
-	
-	@XmlElement(name="price")
+
 	public void setPrice(Price price) {
 		this.price = price;
 	}
@@ -59,50 +66,43 @@ public class Product {
 	public Weight getWeight() {
 		return weight;
 	}
-	
-	@XmlElement(name="weight")
+
 	public void setWeight(Weight weight) {
 		this.weight = weight;
 	}
 
 	public Category getCatefory() {
-		return category;
+		return catefory;
 	}
 
-	@XmlElement(name="category")
 	public void setCatefory(Category catefory) {
-		this.category = catefory;
+		this.catefory = catefory;
 	}
 
 	public Date getDate() {
 		return date;
 	}
 
-	@XmlElement(name="date")
 	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	public boolean isStatus() {
-		return status;
-	}
 
-	@XmlElement(name="status")
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-
-	@XmlRootElement(name = "id")
+	@XmlRootElement(name = "category")
 	public static class Id {
+		@XmlElement(name = "min")
 		private int min;
+		
+		@XmlElement(name = "max")
 		private int max;
+		
+		@XmlValue
 		private String value;
 
 		public int getMin() {
 			return min;
 		}
 
-		@XmlElement(name = "min")
 		public void setMin(int min) {
 			this.min = min;
 		}
@@ -111,7 +111,6 @@ public class Product {
 			return max;
 		}
 
-		@XmlElement(name = "max")
 		public void setMax(int max) {
 			this.max = max;
 		}
@@ -119,7 +118,7 @@ public class Product {
 		public String getValue() {
 			return value;
 		}
-		
+
 		public void setValue(String value) {
 			this.value = value;
 		}
@@ -138,7 +137,10 @@ public class Product {
 	
 	@XmlRootElement(name = "category")
 	public static class Category {
+		@XmlElement(name = "id")
 		private int id;
+
+		@XmlElement(name = "name")
 		private String name;
 
 		public Category() {
@@ -154,7 +156,6 @@ public class Product {
 			return id;
 		}
 
-		@XmlElement(name = "id")
 		public void setId(int id) {
 			this.id = id;
 		}
@@ -163,7 +164,6 @@ public class Product {
 			return name;
 		}
 
-		@XmlElement(name = "name")
 		public void setName(String name) {
 			this.name = name;
 		}
@@ -177,14 +177,16 @@ public class Product {
 
 	@XmlRootElement(name = "price")
 	public static class Price {
+		@XmlAttribute(name = "currency")
 		private String currency;
+
+		@XmlValue
 		private float value;
 
 		public String getCurrency() {
 			return currency;
 		}
 
-		@XmlAttribute(name = "currency")
 		public void setCurrency(String currency) {
 			this.currency = currency;
 		}
@@ -193,7 +195,6 @@ public class Product {
 			return value;
 		}
 
-		@XmlValue
 		public void setValue(float value) {
 			this.value = value;
 		}
@@ -209,16 +210,17 @@ public class Product {
 		}
 	}
 
-	@XmlRootElement(name="weight")
 	public static class Weight {
+		@XmlAttribute(name = "unit")
 		private String unit;
+
+		@XmlValue
 		private int value;
 
 		public String getUnit() {
 			return unit;
 		}
 
-		@XmlAttribute(name = "unit")
 		public void setUnit(String unit) {
 			this.unit = unit;
 		}
@@ -227,7 +229,6 @@ public class Product {
 			return value;
 		}
 
-		@XmlValue
 		public void setValue(int value) {
 			this.value = value;
 		}
@@ -242,16 +243,17 @@ public class Product {
 		}
 	}
 
-	@XmlRootElement(name="date")
 	public static class Date {
+		@XmlAttribute(name="format")
 		private String format;
+		
+		@XmlValue
 		private String value;
 
 		public String getFormat() {
 			return format;
 		}
 
-		@XmlAttribute(name="format")
 		public void setFormat(String format) {
 			this.format = format;
 		}
@@ -260,7 +262,6 @@ public class Product {
 			return value;
 		}
 
-		@XmlValue
 		public void setValue(String value) {
 			this.value = value;
 		}

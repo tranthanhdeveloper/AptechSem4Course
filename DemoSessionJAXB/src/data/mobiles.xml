@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mobiles>
+    <mobile>
+        <id>m01</id>
+        <name>Mobile 1</name>
+        <price>11.0</price>
+    </mobile>
+    <mobile>
+        <id>m02</id>
+        <name>Mobile 2</name>
+        <price>12.0</price>
+    </mobile>
+    <mobile>
+        <id>m03</id>
+        <name>Mobile 3</name>
+        <price>13.0</price>
+    </mobile>
+</mobiles>
