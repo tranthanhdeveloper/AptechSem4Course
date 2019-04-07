@@ -3,11 +3,10 @@ package com.tranthanh.sem4.demosession1.controllers;
 import com.tranthanh.sem4.demosession1.entities.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,5 +62,41 @@ public class DemoController {
     public String demo6(@RequestParam("page") int page){
         System.out.println("page:"+page);
         return "";
+    }
+
+    @GetMapping(value = "/demo7")
+    public String demo7(){
+        return "demo/demo7";
+    }
+
+    @PostMapping(value = "/search")
+    public String search(HttpServletRequest request){
+        String keyword = request.getParameter("keyword");
+        System.out.println("Keyword: "+keyword);
+        return "demo/demo7";
+    }
+
+    @PostMapping(value = "/update")
+    public String update(HttpServletRequest request){
+        String[] quantites = request.getParameterValues("quantity");
+        for (String quantity : quantites ) {
+            System.out.println(quantity);
+        }
+        return "demo/demo7";
+    }
+
+    // Working with session
+    @GetMapping(value = "/demo8")
+    public String demo8(HttpSession httpSession){
+        httpSession.setAttribute("username", "abc");
+        httpSession.setAttribute("age", 20);
+
+        return "demo/demo8";
+    }
+
+    // Redirect to other URL
+    @GetMapping(value = "/demo9")
+    public String demo9(){
+        return "redirect:/demo/demo8";
     }
 }

@@ -9,18 +9,17 @@ import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import com.tranthanh.sem4.demosession1.entities.Account;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.ServletConfigAware;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -52,6 +51,34 @@ public class AccountController implements ServletContextAware {
 		System.out.println(account.toString());
 		return "account/success";
 	}
+
+	@GetMapping(value = "login")
+	public String login(){
+		return "account/login";
+	}
+
+	@PostMapping(value = "login")
+	public String login(HttpServletRequest request, HttpSession session, ModelMap modelMap){
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+
+		if (username.equals("user@email.com") && password.equals("user@email.com")){
+			// Set session attribute
+			session.setAttribute("username", username);
+			return "account/login-success";
+		}else{
+			modelMap.put("loginError", "Username/Password is incorrect");
+			return "account/login";
+		}
+	}
+
+
+	@GetMapping(value = "logout")
+	public String logout(HttpSession session){
+		session.removeAttribute("username");
+		return "account/login-success";
+	}
+
 
 	@Override
 	public void setServletContext(ServletContext servletContext) {
